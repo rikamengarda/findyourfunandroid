@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
+    tools:context="com.example.marlon.findyourfun.config"
+    android:background="@color/cerveja"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Configurações"
+        android:id="@+id/txtLabel"
+        android:textColor="@color/preto"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_Labels"
+        android:layout_marginTop="@dimen/margem_top"
+        android:layout_marginBottom="@dimen/margem_bot"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/margem_bot"
+        android:paddingLeft="@dimen/margem_left"
+        android:id="@+id/txtAlcance"
+        android:text="Alcance"
+        android:textStyle="bold"
+        android:textColor="@color/preto"
+        android:textSize="@dimen/text_Corpo"
+        android:layout_gravity="left"
+        />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+                <SeekBar
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/skbAlcance"
+                    android:layout_gravity="center_horizontal"
+                    android:max="20"
+                    android:progress="5"
+                    />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtValorKM"
+                android:text="5"
+                android:textStyle="bold"
+                android:textColor="@color/preto"
+                android:textSize="15dp"
+                android:layout_gravity="right"
+                android:layout_column="2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtKm"
+                    android:text="Km"
+                    android:textStyle="bold"
+                    android:textColor="@color/preto"
+                    android:textSize="15dp"
+                    android:paddingLeft="5dp"
+                    android:layout_gravity="right"
+                    android:layout_column="3" />
+        </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/margem_bot"
+        android:paddingLeft="@dimen/margem_left"
+        android:id="@+id/txtPref"
+        android:text="Preferências"
+        android:textStyle="bold"
+        android:textColor="@color/preto"
+        android:textSize="@dimen/text_Corpo"
+        android:layout_gravity="left"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerveja"
+        android:id="@+id/checkCerveja"
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="left"
+        android:checked="true"
+        android:textStyle="bold"
+        android:textColor="@color/preto"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destilados"
+        android:id="@+id/checkDestilados"
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textColor="@color/preto"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comida"
+        android:id="@+id/checkComida"
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textColor="@color/preto"/>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        </TableLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:background="@drawable/home"
+        android:id="@+id/btnHome"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>
