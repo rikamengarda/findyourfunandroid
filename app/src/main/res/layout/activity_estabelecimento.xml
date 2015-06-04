@@ -1,0 +1,244 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.marlon.findyourfun.cadastro"
+    android:background="@color/cerveja"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id ="@+id/tbl01"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome do Bar"
+                    android:layout_marginTop="@dimen/margem_bot"
+                    android:layout_marginBottom="@dimen/margem_bot"
+                    android:paddingLeft="@dimen/margem_left"
+                    android:textColor="@color/preto"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:id="@+id/txtNomeBar"
+                    android:layout_span="1"/>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/margem_bot"
+                    android:layout_marginBottom="@dimen/margem_bot"
+                    android:id="@+id/imgStar"
+                    android:src="@drawable/star"
+                    android:layout_gravity="right"
+                    android:layout_column="1" />
+                </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id ="@+id/tbl02">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="X Kms de Distância"
+                        android:layout_marginTop="@dimen/margem_bot"
+                        android:layout_marginBottom="@dimen/margem_bot"
+                        android:textColor="@color/preto"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:id="@+id/txtDistancia"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rua Fulano, nº 338"
+                        android:layout_marginTop="@dimen/margem_bot"
+                        android:layout_marginBottom="@dimen/margem_bot"
+                        android:textColor="@color/preto"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:id="@+id/txtEndereco"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bairro Ciclano"
+                        android:layout_marginTop="@dimen/margem_bot"
+                        android:layout_marginBottom="@dimen/margem_bot"
+                        android:textColor="@color/preto"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:id="@+id/txtBairro"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="www.bar.com.br"
+                        android:layout_marginTop="@dimen/margem_bot"
+                        android:layout_marginBottom="@dimen/margem_bot"
+                        android:textColor="@color/preto"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:id="@+id/txtSiteBar"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="left"
+                    android:layout_column="1">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:paddingLeft="@dimen/margem_left"
+                        android:id="@+id/imgFavorito"
+                        android:src="@drawable/blackstar"
+                        android:layout_gravity="right" />
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:paddingLeft="@dimen/margem_left"
+                        android:id="@+id/imgCerveja"
+                        android:src="@drawable/beer"
+                        android:layout_gravity="right" />
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:paddingLeft="@dimen/margem_left"
+                        android:id="@+id/imgComida"
+                        android:src="@drawable/burger"
+                        android:layout_gravity="right" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:paddingLeft="@dimen/margem_left"
+                        android:id="@+id/imgDestilado"
+                        android:src="@drawable/cocktail"
+                        android:layout_gravity="right" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id ="@+id/tbl03"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HAPPY HOUR DO CICLANO
+                                  - DOUBLE DE CHOPP
+                                  - CAIPIRINHA"
+                    android:layout_marginTop="@dimen/margem_bot"
+                    android:layout_marginBottom="@dimen/margem_bot"
+                    android:paddingLeft="@dimen/margem_left"
+                    android:textColor="@color/preto"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:id="@+id/txtDescBar"
+                    android:layout_span="2" />
+                </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id ="@+id/tbl04">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/imgOK"
+                        android:src="@drawable/star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EU VOU HOJE!!"
+                        android:layout_marginTop="@dimen/margem_bot"
+                        android:layout_marginBottom="@dimen/margem_bot"
+                        android:paddingLeft="@dimen/margem_left"
+                        android:textColor="@color/preto"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:id="@+id/txtEuVou" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="3 Amigos vão Hoje!!"
+                    android:textColor="@color/preto"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:id="@+id/txtAmigosVao"
+                    android:paddingLeft="@dimen/margem_left"
+                    android:layout_column="1" />
+                </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id ="@+id/tbl05">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="(41) 3333-8888"
+                    android:textColor="@color/preto"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:id="@+id/txtTelefone"
+                    android:layout_marginTop="@dimen/margem_top"
+                    android:layout_marginBottom="@dimen/margem_bot"
+                    android:paddingLeft="@dimen/margem_left"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imgTel"
+                    android:src="@drawable/star" />
+                </TableRow>
+        </TableLayout>
+
+        </ScrollView>
+
+</RelativeLayout>
