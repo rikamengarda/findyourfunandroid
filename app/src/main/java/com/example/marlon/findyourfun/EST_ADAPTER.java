@@ -1,10 +1,12 @@
 package com.example.marlon.findyourfun;
 
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -20,6 +22,11 @@ public abstract class EST_ADAPTER extends BaseAdapter {
         return estabelecimento.size();
     }
 
+    public void novosDados(List<Est> est){
+        this.estabelecimento = est;
+        //notifyDataSetChanged();
+    }
+
     public Object getItem(int position){
         return estabelecimento.get(position);
     }
@@ -31,22 +38,8 @@ public abstract class EST_ADAPTER extends BaseAdapter {
 
     public View getView(final int position, View arg1, ViewGroup arg2){
         View v = inflater.inflate(R.layout.activity_item_lista, null);
-        ((TextView)(v.findViewById(R.id.txtNome))).setText(estabelecimento.get(position).nome);
-        ((ImageButton)(v.findViewById(R.id.btnEditar))).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                edita(estabelecimento.get(position));
-            }
-        });
-        ((ImageButton) (v.findViewById(R.id.btnExcluir))).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                deleta(estabelecimento.get(position));
-            }
-        });
+        ((TextView)(v.findViewById(R.id.txtNomeBar))).setText(estabelecimento.get(position).nome);
         return v;
     }
 
-    public abstract void edita(Est estabelecimento);
-    public abstract void deleta(Est estabelecimento);
 }

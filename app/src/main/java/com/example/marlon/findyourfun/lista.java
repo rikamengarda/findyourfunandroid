@@ -1,6 +1,7 @@
 package com.example.marlon.findyourfun;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -16,6 +17,7 @@ public class Lista extends Activity {
     private BD_ESTABELECIMENTO bdEstabelecimento;
     private List<Est> estab = new ArrayList<Est>();
     public ListView list;
+    private EST_ADAPTER estAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,5 +58,33 @@ public class Lista extends Activity {
                 a.preco = cursor.getDouble(cursor.getColumnIndex(bdEstabelecimento.KEY_PRECO));
                 estab.add(a);
             } while (cursor.moveToNext());
+
+        if(estab.size() > 0){
+            if(estAdapter == null){
+                estAdapter = new EST_ADAPTER(this, estab) {
+                    @Override
+                    public void edita(Est est) {
+                        Intent intent = new Intent(getApplicationContext(),cadastro.class);
+                        intent.putExtra("estabelecimento", est);
+
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void deleta(Est est) {
+                        bdEstabelecimento.abrir();
+                        bdEstabelecimento.apagaEst(est.id);
+                        bdEstabelecimento.fechar();
+                        lerDados();
+                        estAdapter.notifyDataSetChanged();
+                    }
+                };
+
+                list.setAdapter(estAdapter);
+            } else
+                estAdapter.novosDados(estab);
+            //artigosAdapter.notifyDataSetChanged();
+        }
+        bdEstabelecimento.fechar();
     }
 }
