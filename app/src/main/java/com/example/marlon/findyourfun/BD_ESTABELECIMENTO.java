@@ -86,11 +86,10 @@ public class BD_ESTABELECIMENTO {
         openHelper.close();
     }
 
-    public long insereEst(String est, String media, String endereco, String descricao, String telefone, String horario, String site,
+    public long insereEst(String est, String endereco, String descricao, String telefone, String horario, String site,
                           String fb, String inst, String tw, int cerveja, int destilado, int comida, double preco){
         ContentValues campos = new ContentValues();
         campos.put(KEY_EST, est);
-        campos.put(KEY_MEDIA, media);
         campos.put(KEY_END, endereco);
         campos.put(KEY_DESC, descricao);
         campos.put(KEY_TEL, telefone);

@@ -33,7 +33,7 @@ public class cadastro extends Activity {
         db = new BD_ESTABELECIMENTO(this);
         btCadastrar = (Button) findViewById(R.id.btnCadastrar);
 
-        nomeEdt =(EditText) findViewById(R.id.editNomeCad);
+        nomeEdt = (EditText) findViewById(R.id.editNomeCad);
         endEdt = (EditText) findViewById(R.id.editEndCad);
         descEdt = (EditText) findViewById(R.id.ediDescCad);
         telEdt = (EditText) findViewById(R.id.ediTelCad);
@@ -42,22 +42,25 @@ public class cadastro extends Activity {
         faceEdt = (EditText) findViewById(R.id.ediFaceCad);
         instEdt = (EditText) findViewById(R.id.editInsCad);
         twtEdt = (EditText) findViewById(R.id.ediTweetCad);
+        precEdt = (EditText) findViewById(R.id.editChoppCad);
         cerveja = Integer.parseInt(String.valueOf(findViewById(R.id.checkCervejaCad)));
         dest = Integer.parseInt(String.valueOf(findViewById(R.id.checkDestiladosCad)));
         comida = Integer.parseInt(String.valueOf(findViewById(R.id.checkComidaCad)));
 
+        btCadastrar.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                salvar(v);
+            };
+        });
+    }
+
     public void salvar (View v){
         db.abrir();
-        if(food != null){
-            db.atualizaComida(food.id, edtNome.getText().toString(), edtIng.getText().toString(), edtPrep.getText().toString(),tipo);
-        } else {
-            db.insereComida(edtNome.getText().toString(), edtIng.getText().toString(), edtPrep.getText().toString(), tipo);
-        }
+            db.insereEst(nomeEdt.getText().toString(), endEdt.getText().toString(), descEdt.getText().toString(), telEdt.getText().toString(),
+                    horEdt.getText().toString(), siteEdt.getText().toString(), faceEdt.getText().toString(), instEdt.getText().toString(), twtEdt.getText().toString(),
+                    cerveja, dest, comida,Double.parseDouble(precEdt.getText().toString()));
         db.fechar();
         finish();
     }
-        }
-    }
-
 
 }
