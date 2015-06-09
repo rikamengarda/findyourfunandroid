@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Lista extends Activity {
         lerDados();
     }
 
-    public void lerDados() {
+    public void lerDados() throws SQLException {
         bdEstabelecimento.abrir();
         est.clear();
         Cursor cursor = bdEstabelecimento.retornaTodosEst();

@@ -30,8 +30,8 @@ public abstract class EST_ADAPTER extends BaseAdapter {
 
 
     public View getView(final int position, View arg1, ViewGroup arg2){
-        View v = inflater.inflate(R.layout.item_comida, null);
-        ((TextView)(v.findViewById(R.id.txtNome))).setText(food.get(position).nome);
+        View v = inflater.inflate(R.layout.activity_item_lista, null);
+        ((TextView)(v.findViewById(R.id.txtNome))).setText(estabelecimento.get(position).nome);
         ((ImageButton)(v.findViewById(R.id.btnEditar))).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
