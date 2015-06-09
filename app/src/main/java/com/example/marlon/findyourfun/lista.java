@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Lista extends Activity {
     private BD_ESTABELECIMENTO bdEstabelecimento;
-    private List<Est> est = new ArrayList<>();
+    private List<Est> estab = new ArrayList<Est>();
     public ListView list;
 
     @Override
@@ -24,12 +24,16 @@ public class Lista extends Activity {
 
         list = (ListView) findViewById(R.id.list);
         bdEstabelecimento = new BD_ESTABELECIMENTO(this);
-        lerDados();
+        try {
+            lerDados();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void lerDados() throws SQLException {
         bdEstabelecimento.abrir();
-        est.clear();
+        estab.clear();
         Cursor cursor = bdEstabelecimento.retornaTodosEst();
 
         if (cursor.moveToFirst())
@@ -50,7 +54,7 @@ public class Lista extends Activity {
                 a.destilado = cursor.getInt(cursor.getColumnIndex(bdEstabelecimento.KEY_DESTILADO));
                 a.comida = cursor.getInt(cursor.getColumnIndex(bdEstabelecimento.KEY_COMIDA));
                 a.preco = cursor.getDouble(cursor.getColumnIndex(bdEstabelecimento.KEY_PRECO));
-                Est.add(a);
+                estab.add(a);
             } while (cursor.moveToNext());
     }
 }
