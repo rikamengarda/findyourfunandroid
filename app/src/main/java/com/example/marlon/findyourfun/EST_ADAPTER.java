@@ -35,7 +35,6 @@ public abstract class EST_ADAPTER extends BaseAdapter {
         return 0;
     }
 
-
     public View getView(final int position, View arg1, ViewGroup arg2){
         View v = inflater.inflate(R.layout.activity_item_lista, null);
         ((TextView)(v.findViewById(R.id.txtNomeBar))).setText(estabelecimento.get(position).nome);
