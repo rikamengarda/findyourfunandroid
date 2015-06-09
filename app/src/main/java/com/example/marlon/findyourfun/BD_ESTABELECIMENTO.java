@@ -77,7 +77,7 @@ public class BD_ESTABELECIMENTO {
         }
     }
 
-    public BD_ESTABELECIMENTO abrir() throws SQLException{
+    public BD_ESTABELECIMENTO abrir(){
         db = openHelper.getWritableDatabase();
         return this;
     }

@@ -24,14 +24,11 @@ public class Lista extends Activity {
 
         list = (ListView) findViewById(R.id.list);
         bdEstabelecimento = new BD_ESTABELECIMENTO(this);
-        try {
-            lerDados();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+        lerDados();
     }
 
-    public void lerDados() throws SQLException {
+    public void lerDados() {
         bdEstabelecimento.abrir();
         estab.clear();
         Cursor cursor = bdEstabelecimento.retornaTodosEst();

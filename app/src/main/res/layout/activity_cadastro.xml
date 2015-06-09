@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nome Completo:"
+                android:text="Nome Estabelecimento:"
                 android:layout_marginTop="@dimen/margem_bot"
                 android:paddingLeft="@dimen/margem_left"
                 android:textColor="@color/preto"
@@ -54,9 +54,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email:"
+                android:text="Endereço:"
                 android:layout_marginTop="@dimen/margem_bot"
-                android:layout_marginBottom="@dimen/margem_bot"
                 android:paddingLeft="@dimen/margem_left"
                 android:textColor="@color/preto"
                 android:textStyle="bold"
@@ -66,18 +65,17 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:id="@+id/editEmailCad"
+                android:id="@+id/editEndCad"
                 android:background="@color/branco"
-                android:hint="Email"
+                android:hint="Endereço"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/margem_bot"/>
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Senha:"
+                android:text="Descrição:"
                 android:layout_marginTop="@dimen/margem_bot"
-                android:layout_marginBottom="@dimen/margem_bot"
                 android:paddingLeft="@dimen/margem_left"
                 android:textColor="@color/preto"
                 android:textStyle="bold"
@@ -86,37 +84,191 @@
             <EditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:padding="10dp"
-                android:ems="10"
-                android:id="@+id/editPassCad"
+                android:id="@+id/ediDescCad"
                 android:background="@color/branco"
-                android:hint="Senha"
+                android:hint="Descrição"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/margem_bot" />
+                />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefone:"
+            android:layout_marginTop="@dimen/margem_bot"
+            android:layout_marginBottom="@dimen/margem_bot"
+            android:paddingLeft="@dimen/margem_left"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            android:id="@+id/senhaRepetTextView"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/ediTelCad"
+                android:background="@color/branco"
+                android:hint="Telefone"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horário:"
+            android:layout_marginTop="@dimen/margem_bot"
+            android:layout_marginBottom="@dimen/margem_bot"
+            android:paddingLeft="@dimen/margem_left"
+            android:textColor="@color/preto"
+            android:textStyle="bold"
+            />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/ediHorlCad"
+                android:background="@color/branco"
+                android:hint="Horário"
+                android:layout_gravity="center_horizontal"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Repita sua Senha:"
+                android:text="Site:"
                 android:layout_marginTop="@dimen/margem_bot"
                 android:layout_marginBottom="@dimen/margem_bot"
                 android:paddingLeft="@dimen/margem_left"
                 android:textColor="@color/preto"
                 android:textStyle="bold"
-                android:id="@+id/senhaRepetTextView"/>
+                />
 
             <EditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:padding="10dp"
-                android:ems="10"
-                android:id="@+id/editRePassCad"
+                android:id="@+id/ediSitelCad"
                 android:background="@color/branco"
-                android:hint="Repita sua Senha"
+                android:hint="Site"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/margem_bot" />
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Facebook:"
+                android:layout_marginTop="@dimen/margem_bot"
+                android:layout_marginBottom="@dimen/margem_bot"
+                android:paddingLeft="@dimen/margem_left"
+                android:textColor="@color/preto"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/ediFaceCad"
+                android:background="@color/branco"
+                android:hint="Facebook"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instagram:"
+                android:layout_marginTop="@dimen/margem_bot"
+                android:layout_marginBottom="@dimen/margem_bot"
+                android:paddingLeft="@dimen/margem_left"
+                android:textColor="@color/preto"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/editInsCad"
+                android:background="@color/branco"
+                android:hint="Instagram"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Twitter:"
+                android:layout_marginTop="@dimen/margem_bot"
+                android:layout_marginBottom="@dimen/margem_bot"
+                android:paddingLeft="@dimen/margem_left"
+                android:textColor="@color/preto"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/ediTweetCad"
+                android:background="@color/branco"
+                android:hint="Twitter"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cerveja"
+                android:id="@+id/checkCervejaCad"
+                android:layout_marginLeft="30dp"
+                android:layout_gravity="left"
+                android:checked="true"
+                android:textStyle="bold"
+                android:textColor="@color/preto"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destilados"
+                android:id="@+id/checkDestiladosCad"
+                android:layout_marginLeft="30dp"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/preto"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comida"
+                android:id="@+id/checkComidaCad"
+                android:layout_marginLeft="30dp"
+                android:layout_gravity="left"
+                android:textStyle="bold"
+                android:textColor="@color/preto"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preço Chopp:"
+                android:layout_marginTop="@dimen/margem_bot"
+                android:layout_marginBottom="@dimen/margem_bot"
+                android:paddingLeft="@dimen/margem_left"
+                android:textColor="@color/preto"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/ediChopplCad"
+                android:background="@color/branco"
+                android:hint="Preço Chopp"
+                android:layout_gravity="center_horizontal"
+                />
 
             <Button
                 android:layout_width="wrap_content"
