@@ -44,9 +44,9 @@ public class BD_ESTABELECIMENTO {
             + KEY_FB + "text null, "
             + KEY_INST + "text null, "
             + KEY_TWITTER + "text null, "
-            + KEY_CERVEJA + "boolean not null, "
-            + KEY_DESTILADO + "boolean null, "
-            + KEY_COMIDA + "boolean null, "
+            + KEY_CERVEJA + "int not null, "
+            + KEY_DESTILADO + "int null, "
+            + KEY_COMIDA + "int null, "
             + KEY_PRECO + "double not null);";
 
     final Context context;
@@ -87,7 +87,7 @@ public class BD_ESTABELECIMENTO {
     }
 
     public long insereEst(String est, String media, String endereco, String descricao, String telefone, String horario, String site,
-                          String fb, String inst, String tw, boolean cerveja, boolean destilado, boolean comida, double preco){
+                          String fb, String inst, String tw, int cerveja, int destilado, int comida, double preco){
         ContentValues campos = new ContentValues();
         campos.put(KEY_EST, est);
         campos.put(KEY_MEDIA, media);
@@ -116,7 +116,7 @@ public class BD_ESTABELECIMENTO {
     }
 
     public boolean atualizaEst(long id, String est, String media, String endereco, String descricao, String telefone, String horario, String site,
-                               String fb, String inst, String tw, boolean cerveja, boolean destilado, boolean comida, double preco){
+                               String fb, String inst, String tw, int cerveja, int destilado, int comida, double preco){
         ContentValues args = new ContentValues();
         args.put(KEY_EST, est);
         args.put(KEY_MEDIA, media);

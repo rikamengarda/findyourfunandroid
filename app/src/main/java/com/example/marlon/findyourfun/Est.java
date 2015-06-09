@@ -17,9 +17,9 @@ public class Est implements Serializable {
     String facebook;
     String instagram;
     String twitter;
-    boolean cerveja;
-    boolean destilado;
-    boolean comida;
+    int cerveja;
+    int destilado;
+    int comida;
     double preco;
 
 }
