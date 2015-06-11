@@ -9,10 +9,10 @@
     <color name="background_Login">#d9d5dc</color>
     <color name="branco">#fff</color>
     <color name="preto">#000</color>
-    <string name="title_activity_cadastro">cadastro</string>
+    <string name="title_activity_cadastro">Cadastro</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_estabelecimento">estabelecimento</string>
-    <string name="title_activity_item_comida">item_comida</string>
+    <string name="title_activity_estabelecimento">Estabelecimento</string>
+    <string name="title_activity_item_lista">item_lista</string>
     <string name="title_activity_lista">lista</string>
 
 

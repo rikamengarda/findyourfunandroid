@@ -33,12 +33,12 @@
             android:label="@string/title_activity_estabelecimento" >
         </activity>
         <activity
-            android:name=".item_comida"
-            android:label="@string/title_activity_item_comida" >
+            android:name=".lista"
+            android:label="@string/title_activity_lista" >
         </activity>
         <activity
             android:name=".item_lista"
-            android:label="@string/title_activity_lista" >
+            android:label="@string/title_activity_item_lista" >
         </activity>
     </application>
 

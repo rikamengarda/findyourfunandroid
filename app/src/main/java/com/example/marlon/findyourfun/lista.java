@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Marlon on 09/06/2015.
  */
-public class Lista extends Activity {
+public class lista extends Activity {
     private BD_ESTABELECIMENTO bdEstabelecimento;
     private List<Est> estab = new ArrayList<Est>();
     public ListView list;
@@ -46,9 +46,9 @@ public class Lista extends Activity {
                 a.site = cursor.getString(cursor.getColumnIndex(bdEstabelecimento.KEY_SITE));
                 a.facebook = cursor.getString(cursor.getColumnIndex(bdEstabelecimento.KEY_FB));
                 a.instagram = cursor.getString(cursor.getColumnIndex(bdEstabelecimento.KEY_INST));
-                a.twitter = cursor.getString(cursor.getColumnIndex(bdEstabelecimento.KEY_TWITTER));
-                a.cerveja = cursor.getInt(cursor.getColumnIndex(bdEstabelecimento.KEY_CERVEJA));
-                a.destilado = cursor.getInt(cursor.getColumnIndex(bdEstabelecimento.KEY_DESTILADO));
+                a.twitter = cursor.getString(cursor.getColumnIndex(bdEstabelecimento.KEY_TT));
+                a.cerveja = cursor.getInt(cursor.getColumnIndex(bdEstabelecimento.KEY_CERVA));
+                a.destilado = cursor.getInt(cursor.getColumnIndex(bdEstabelecimento.KEY_DEST));
                 a.comida = cursor.getInt(cursor.getColumnIndex(bdEstabelecimento.KEY_COMIDA));
                 a.preco = cursor.getDouble(cursor.getColumnIndex(bdEstabelecimento.KEY_PRECO));
                 estab.add(a);

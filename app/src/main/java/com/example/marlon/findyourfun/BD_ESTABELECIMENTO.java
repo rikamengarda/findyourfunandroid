@@ -14,40 +14,21 @@ import java.sql.SQLException;
 public class BD_ESTABELECIMENTO {
     static String KEY_ID = "_id";
     static String KEY_EST = "est";
-    static String KEY_MEDIA = "MED_NOTA";
-    static String KEY_END = "END";
-    static String KEY_DESC = "DESC";
-    static String KEY_TEL = "TEL";
-    static String KEY_HORARIO = "HORARIO";
-    static String KEY_SITE = "SITE";
-    static String KEY_FB = "FB";
-    static String KEY_INST = "INST";
-    static String KEY_TWITTER = "TWITTER";
-    static String KEY_CERVEJA = "CERVEJA";
-    static String KEY_DESTILADO = "DESTILADO";
-    static String KEY_COMIDA = "COMIDA";
-    static String KEY_PRECO = "PREC";
+    static String KEY_MEDIA = "media";
+    static String KEY_END = "end";
+    static String KEY_DESC = "desc";
+    static String KEY_TEL = "tel";
+    static String KEY_HORARIO = "horario";
+    static String KEY_SITE = "site";
+    static String KEY_FB = "fb";
+    static String KEY_INST = "inst";
+    static String KEY_TT = "tt";
+    static String KEY_CERVA = "cerva";
+    static String KEY_DEST = "dest";
+    static String KEY_COMIDA = "comida";
+    static String KEY_PRECO = "preco";
 
-
-    String NOME_BANCO = "db_FindYourFun";
     String NOME_TABELA = "estabelecimento";
-    int VERSAO_BANCO = 1;
-    String SQL_CREATE_TABLE = "create table estabelecimento" +
-            "(" + KEY_ID + "integer primary key autoincrement,"
-            + KEY_EST + "text not null, "
-            + KEY_MEDIA + "double null, "
-            + KEY_END + "text not null, "
-            + KEY_DESC + "text not null, "
-            + KEY_TEL + "text not null, "
-            + KEY_HORARIO + "text not null, "
-            + KEY_SITE + "text null, "
-            + KEY_FB + "text null, "
-            + KEY_INST + "text null, "
-            + KEY_TWITTER + "text null, "
-            + KEY_CERVEJA + "int not null, "
-            + KEY_DESTILADO + "int null, "
-            + KEY_COMIDA + "int null, "
-            + KEY_PRECO + "double not null);";
 
     final Context context;
     MeuOpenHelper openHelper;
@@ -56,25 +37,6 @@ public class BD_ESTABELECIMENTO {
     public BD_ESTABELECIMENTO(Context ctx){
         this.context = ctx;
         openHelper = new MeuOpenHelper(context);
-    }
-
-    public class MeuOpenHelper extends SQLiteOpenHelper{
-        MeuOpenHelper(Context context){
-            super(context, NOME_BANCO, null, VERSAO_BANCO);
-        }
-
-        @Override
-        //Banco for criado a primeira vez
-        public void onCreate(SQLiteDatabase db){
-            db.execSQL(SQL_CREATE_TABLE);
-        }
-
-        @Override
-        //Quando temos uma nova versao do app ou do BD
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-            db.execSQL("DROP TABLE IF EXISTS estabelecimento");
-            onCreate(db);
-        }
     }
 
     public BD_ESTABELECIMENTO abrir(){
@@ -87,7 +49,7 @@ public class BD_ESTABELECIMENTO {
     }
 
     public long insereEst(String est, String endereco, String descricao, String telefone, String horario, String site,
-                          String fb, String inst, String tw, int cerveja, int destilado, int comida, double preco){
+                          String fb, String inst, String tw, int cerveja, int destilado, int comida, String preco){
         ContentValues campos = new ContentValues();
         campos.put(KEY_EST, est);
         campos.put(KEY_END, endereco);
@@ -97,9 +59,9 @@ public class BD_ESTABELECIMENTO {
         campos.put(KEY_SITE, site);
         campos.put(KEY_FB, fb);
         campos.put(KEY_INST, inst);
-        campos.put(KEY_TWITTER, tw);
-        campos.put(KEY_CERVEJA, cerveja);
-        campos.put(KEY_DESTILADO, destilado);
+        campos.put(KEY_TT, tw);
+        campos.put(KEY_CERVA, cerveja);
+        campos.put(KEY_DEST, destilado);
         campos.put(KEY_COMIDA, comida);
         campos.put(KEY_PRECO, preco);
         return db.insert(NOME_TABELA, null, campos);
@@ -111,11 +73,11 @@ public class BD_ESTABELECIMENTO {
 
     public Cursor retornaTodosEst(){
         return db.query(NOME_TABELA, new String[]{KEY_ID, KEY_EST, KEY_MEDIA, KEY_END, KEY_DESC, KEY_TEL, KEY_HORARIO, KEY_SITE
-                , KEY_FB, KEY_INST, KEY_TWITTER, KEY_CERVEJA, KEY_DESTILADO, KEY_COMIDA, KEY_PRECO}, null, null, null, null, null);
+                , KEY_FB, KEY_INST, KEY_TT, KEY_CERVA, KEY_DEST, KEY_COMIDA, KEY_PRECO}, null, null, null, null, null);
     }
 
     public boolean atualizaEst(long id, String est, String media, String endereco, String descricao, String telefone, String horario, String site,
-                               String fb, String inst, String tw, int cerveja, int destilado, int comida, double preco){
+                               String fb, String inst, String tw, int cerveja, int destilado, int comida, String preco){
         ContentValues args = new ContentValues();
         args.put(KEY_EST, est);
         args.put(KEY_MEDIA, media);
@@ -126,9 +88,9 @@ public class BD_ESTABELECIMENTO {
         args.put(KEY_SITE, site);
         args.put(KEY_FB, fb);
         args.put(KEY_INST, inst);
-        args.put(KEY_TWITTER, tw);
-        args.put(KEY_CERVEJA, cerveja);
-        args.put(KEY_DESTILADO, destilado);
+        args.put(KEY_TT, tw);
+        args.put(KEY_CERVA, cerveja);
+        args.put(KEY_DEST, destilado);
         args.put(KEY_COMIDA, comida);
         args.put(KEY_PRECO, preco);
         // Retorna se houve registro alterado ou nao
