@@ -55,8 +55,13 @@ public class lista extends Activity {
                 estabelecimento.add(a);
             } while (cursor.moveToNext());
 
-        estAdapter.novosDados(estabelecimento);
-        //artigosAdapter.notifyDataSetChanged();
+        if(estabelecimento.size() > 0){
+            if(estAdapter == null){
+                list.setAdapter(estAdapter);
+            } else{
+                estAdapter.novosDados(estabelecimento);
+            }
+        }
         db.fechar();
     }
 }
