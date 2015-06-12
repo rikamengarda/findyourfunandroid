@@ -73,7 +73,7 @@ public class cadastro extends Activity {
     }
 
     public void salvar (View v){
-        BD_ESTABELECIMENTO db = new BD_ESTABELECIMENTO(this);
+        BancoDeDados db = new BancoDeDados(this);
         db.abrir();
             db.insereEst(nomeEdt.getText().toString(), endEdt.getText().toString(), descEdt.getText().toString(), telEdt.getText().toString(),
                     horEdt.getText().toString(), siteEdt.getText().toString(), faceEdt.getText().toString(), instEdt.getText().toString(), twtEdt.getText().toString(),

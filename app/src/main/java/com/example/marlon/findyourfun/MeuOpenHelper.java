@@ -31,20 +31,20 @@ public class MeuOpenHelper extends SQLiteOpenHelper {
 
     String SQL_CREATE_TABLE = "create table estabelecimento" +
             "(" + KEY_ID + " integer primary key autoincrement, "
-            + KEY_EST + "text, "
-            + KEY_MEDIA + "integer, "
-            + KEY_END + "text, "
-            + KEY_DESC + "text, "
-            + KEY_TEL + "text, "
-            + KEY_HORARIO + "text, "
-            + KEY_SITE + "text, "
-            + KEY_FB + "text, "
-            + KEY_INST + "text, "
-            + KEY_TT + "text, "
-            + KEY_CERVA + "integer, "
-            + KEY_DEST + "integer, "
-            + KEY_COMIDA + "integer, "
-            + KEY_PRECO + "text);";
+            + KEY_EST + " text, "
+            + KEY_MEDIA + " integer, "
+            + KEY_END + " text, "
+            + KEY_DESC + " text, "
+            + KEY_TEL + " text, "
+            + KEY_HORARIO + " text, "
+            + KEY_SITE + " text, "
+            + KEY_FB + " text, "
+            + KEY_INST + " text, "
+            + KEY_TT + " text, "
+            + KEY_CERVA + " integer, "
+            + KEY_DEST + " integer, "
+            + KEY_COMIDA + " integer, "
+            + KEY_PRECO + " text);";
 
     MeuOpenHelper (Context context){
         super(context, "db_FindYourFun", null, 1);

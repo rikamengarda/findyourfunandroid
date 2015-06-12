@@ -8,12 +8,12 @@ import android.widget.Button;
 
 
 public class Login extends Activity {
-    private BD_ESTABELECIMENTO db;
+    private BancoDeDados db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        db = new BD_ESTABELECIMENTO(this);
+        db = new BancoDeDados(this);
         Button btLogin = (Button)findViewById(R.id.btnLogin);
         Button btFacebook = (Button)findViewById(R.id.btn_Login_facebook);
         Button btCadastro = (Button)findViewById(R.id.btnCadastrar);

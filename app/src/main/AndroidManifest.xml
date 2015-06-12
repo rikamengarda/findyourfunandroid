@@ -40,6 +40,10 @@
             android:name=".item_lista"
             android:label="@string/title_activity_item_lista" >
         </activity>
+        <activity
+            android:name=".Teste"
+            android:label="@string/title_activity_teste" >
+        </activity>
     </application>
 
 </manifest>
