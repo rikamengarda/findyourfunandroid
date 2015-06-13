@@ -22,8 +22,8 @@ public class EstabelecimentoAdapter extends BaseAdapter {
         this.estabelecimento = estabelecimento;
     }
 
-    public void novosDados(List<Est> estabelecimento){
-        this.estabelecimento = estabelecimento;
+    public void novosDados(List<Est> estab){
+        this.estabelecimento = estab;
         //notifyDataSetChanged();
     }
 
@@ -41,7 +41,7 @@ public class EstabelecimentoAdapter extends BaseAdapter {
 
     public View getView(final int position, View arg1, ViewGroup arg2){
         View v = inflater.inflate(R.layout.activity_item_lista, null);
-        ((TextView)(v.findViewById(R.id.txtNomeBar))).setText(estabelecimento.get(position).nome);
+        ((TextView)(v.findViewById(R.id.nomeBarLista))).setText(estabelecimento.get(position).nome);
         return v;
     }
   }

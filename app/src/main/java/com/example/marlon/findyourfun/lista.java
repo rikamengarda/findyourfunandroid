@@ -57,6 +57,7 @@ public class lista extends Activity {
 
         if(estabelecimento.size() > 0){
             if(estAdapter == null){
+                estAdapter = new EstabelecimentoAdapter(this, estabelecimento);
                 list.setAdapter(estAdapter);
             } else{
                 estAdapter.novosDados(estabelecimento);
