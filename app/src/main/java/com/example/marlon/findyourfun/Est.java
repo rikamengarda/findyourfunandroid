@@ -20,6 +20,6 @@ public class Est implements Serializable {
     int cerveja;
     int destilado;
     int comida;
-    double preco;
+    String preco;
 
 }

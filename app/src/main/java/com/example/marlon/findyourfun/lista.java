@@ -1,8 +1,11 @@
 package com.example.marlon.findyourfun;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -27,6 +30,18 @@ public class lista extends Activity {
         db = new BancoDeDados(this);
 
         lerDados();
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                Intent it = new Intent(getApplicationContext(), estabelecimento.class);
+                Bundle params = new Bundle();
+                params.putInt("id", position);
+                it.putExtras(params);
+               startActivity(it);
+            }
+
+        });
     }
 
     public void lerDados() {
@@ -51,7 +66,7 @@ public class lista extends Activity {
                 a.cerveja = cursor.getInt(cursor.getColumnIndex(db.KEY_CERVA));
                 a.destilado = cursor.getInt(cursor.getColumnIndex(db.KEY_DEST));
                 a.comida = cursor.getInt(cursor.getColumnIndex(db.KEY_COMIDA));
-                a.preco = cursor.getDouble(cursor.getColumnIndex(db.KEY_PRECO));
+                a.preco = cursor.getString(cursor.getColumnIndex(db.KEY_PRECO));
                 estabelecimento.add(a);
             } while (cursor.moveToNext());
 

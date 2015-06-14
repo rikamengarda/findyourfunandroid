@@ -42,6 +42,8 @@ public class EstabelecimentoAdapter extends BaseAdapter {
     public View getView(final int position, View arg1, ViewGroup arg2){
         View v = inflater.inflate(R.layout.activity_item_lista, null);
         ((TextView)(v.findViewById(R.id.nomeBarLista))).setText(estabelecimento.get(position).nome);
+        ((TextView)(v.findViewById(R.id.horaLista))).setText(estabelecimento.get(position).horario);
+        ((TextView)(v.findViewById(R.id.txtPreco))).setText(estabelecimento.get(position).preco);
         return v;
     }
   }

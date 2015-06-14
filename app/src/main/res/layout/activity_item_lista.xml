@@ -1,51 +1,78 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cerveja">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imgFavLista"/>
-
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:id="@+id/nomeBarLista"/>
+           android:text="Nome Bar"
+           android:textStyle="bold"
+           android:textSize="20dp"
+           android:textColor="@color/preto"
+           android:id="@+id/nomeBarLista"
+           android:layout_marginLeft="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/distLista"/>
+        android:text="Distancia"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@color/preto"
+        android:layout_below="@+id/nomeBarLista"
+        android:id="@+id/distLista"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/horaLista"/>
+        android:text="Horario"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@color/preto"
+        android:layout_below="@+id/distLista"
+        android:id="@+id/horaLista"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"/>
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/imgCervLista"
-        android:src="@drawable/beer"/>
+        android:src="@drawable/beer"
+        android:layout_above="@+id/horaLista"
+        android:layout_toLeftOf="@+id/txtRs"
+        android:layout_toStartOf="@+id/txtRs" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtPreco"/>
+        android:text="R$"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@color/preto"
+        android:id="@+id/txtRs"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@+id/nomeBarLista"
+        android:layout_toLeftOf="@+id/txtPreco"
+        android:layout_toStartOf="@+id/txtPreco" />
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/imgHambLista"
-        android:src="@drawable/burger"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PReço"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@color/preto"
+        android:id="@+id/txtPreco"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_alignTop="@+id/txtRs"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/imgCockLista"
-        android:src="@drawable/cocktail"/>
-
-
-</LinearLayout>
+</RelativeLayout>
