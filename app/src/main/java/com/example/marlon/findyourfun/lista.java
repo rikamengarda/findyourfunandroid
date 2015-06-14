@@ -36,7 +36,15 @@ public class lista extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Intent it = new Intent(getApplicationContext(), estabelecimento.class);
                 Bundle params = new Bundle();
-                params.putInt("id", position);
+                params.putString("nome", estabelecimento.get(position).nome);
+                params.putString("endereco", estabelecimento.get(position).endereco);
+                params.putString("site", estabelecimento.get(position).site);
+                params.putString("descricao", estabelecimento.get(position).descricao);
+                params.putString("telefone", estabelecimento.get(position).telefone);
+                params.putString("preco", estabelecimento.get(position).preco);
+                params.putInt("cerveja", estabelecimento.get(position).cerveja);
+                params.putInt("destilado", estabelecimento.get(position).destilado);
+                params.putInt("comida", estabelecimento.get(position).comida);
                 it.putExtras(params);
                startActivity(it);
             }

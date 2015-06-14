@@ -33,6 +33,7 @@ public class cadastro extends Activity {
         setContentView(R.layout.activity_cadastro);
 
         Button btCadastrar = (Button) findViewById(R.id.btnCadastroCad);
+        Button btEditar = (Button) findViewById(R.id.btnEditarCad);
         nomeEdt = (EditText) findViewById(R.id.editNomeCad);
         endEdt = (EditText) findViewById(R.id.editEndCad);
         descEdt = (EditText) findViewById(R.id.ediDescCad);
@@ -47,27 +48,34 @@ public class cadastro extends Activity {
         destCk = (CheckBox) findViewById(R.id.checkDestiladosCad);
         comidaCK = (CheckBox) findViewById(R.id.checkComidaCad);
 
-        if (cervCk.isChecked()) {
-            cerveja = 1;
-        }else{
-             cerveja = 0;
-        }
+        btCadastrar.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                if (cervCk.isChecked()) {
+                    cerveja = 1;
+                } else {
+                    cerveja = 0;
+                }
+                if (destCk.isChecked()) {
+                    dest = 1;
+                } else {
+                    dest = 0;
+                }
 
-        if (destCk.isChecked()) {
-            dest = 1;
-        }else{
-            dest = 0;
-        }
-
-        if (comidaCK.isChecked()) {
-            comida = 1;
-        }else{
-            comida = 0;
-        }
-
-        btCadastrar.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
+                if (comidaCK.isChecked()) {
+                    comida = 1;
+                } else {
+                    comida = 0;
+                }
                 salvar(v);
+            }
+
+            ;
+        });
+
+        btEditar.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(getApplicationContext(), Teste.class);
+                startActivity(it);
             };
         });
     }

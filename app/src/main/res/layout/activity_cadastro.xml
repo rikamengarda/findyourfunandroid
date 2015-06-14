@@ -270,16 +270,40 @@
                 android:layout_gravity="center_horizontal"
                 />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cadastrar"
-                android:id="@+id/btnCadastroCad"
-                android:background="@color/preto"
-                android:textColor="@color/branco"
-                android:textStyle="bold"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/margem_top"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margem_top">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cadastrar"
+                    android:id="@+id/btnCadastroCad"
+                    android:background="@color/preto"
+                    android:textColor="@color/branco"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="@dimen/margem_top"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar"
+                    android:id="@+id/btnEditarCad"
+                    android:background="@color/preto"
+                    android:textColor="@color/branco"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="@dimen/margem_top"
+                    />
+                </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
     />
