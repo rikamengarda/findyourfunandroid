@@ -27,7 +27,7 @@ public class Login extends Activity {
 
         btLogin.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                Intent it = new Intent(getApplicationContext(), TesteMapa.class);
+                Intent it = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(it);
             };
         });

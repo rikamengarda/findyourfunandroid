@@ -111,9 +111,6 @@ public class MapsActivity extends FragmentActivity {
                 // Get longitude of the current location
                 double longitude = myLocation.getLongitude();
 
-                // Create a LatLng object for the current location
-
-
                 // Show the current location in Google Map
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                 mMap.animateCamera(CameraUpdateFactory.zoomTo(14));

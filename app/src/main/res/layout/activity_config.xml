@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:gravity="center_horizontal"
     tools:context="com.example.marlon.findyourfun.config"
-    android:background="@color/cerveja"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <TextView
@@ -18,7 +18,7 @@
         android:textColor="@color/preto"
         android:textStyle="bold"
         android:textSize="@dimen/text_Labels"
-        android:layout_marginTop="@dimen/margem_top"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="@dimen/margem_bot"
         />
 
@@ -119,21 +119,14 @@
         android:textStyle="bold"
         android:textColor="@color/preto"/>
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        </TableLayout>
-
     <Button
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:background="@drawable/home"
-        android:id="@+id/btnHome"
+        android:text="Salvar"
+        android:id="@+id/btnSalvarConf"
+        android:layout_marginTop="40dp"
+        android:background="@color/preto"
+        android:textColor="@color/branco"
         android:layout_gravity="center_horizontal" />
-
 
 </LinearLayout>
