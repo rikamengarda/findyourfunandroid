@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,6 +57,18 @@ public class estabelecimento extends Activity {
         if(comida == 1){
             imgCom.setVisibility(View.VISIBLE);
         }
+
+        Button btnMapa = (Button) findViewById(R.id.btnMapa);
+
+        btnMapa.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                Intent it = new Intent(getApplicationContext(), MapsActivity.class);
+                it.putExtra("end", txtEnd.getText());
+                it.putExtra("nome", txtNome.getText());
+                it.putExtra("tel", txtTel.getText());
+                startActivity(it);
+            };
+        });
     }
 
 }
