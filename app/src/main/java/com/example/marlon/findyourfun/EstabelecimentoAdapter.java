@@ -44,10 +44,14 @@ public class EstabelecimentoAdapter extends BaseAdapter {
     }
 
     public View getView(final int position, View arg1, ViewGroup arg2){
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("i01", R.drawable.i01);
+        map.put("i02", R.drawable.i02);
 
         View v = inflater.inflate(R.layout.activity_item_lista, null);
         ((TextView)(v.findViewById(R.id.txtNomeBarList))).setText(estabelecimento.get(position).nome);
         ((TextView)(v.findViewById(R.id.txtPrecoLista))).setText(String.valueOf("R$ " + estabelecimento.get(position).preco));
+        ((ImageView)(v.findViewById(R.id.imgList))).setImageResource(map.get(estabelecimento.get(position).imgBar));
         return v;
     }
 

@@ -44,8 +44,7 @@ public class lista extends Activity {
                 params.putString("hora", estabelecimento.get(position).horario);
                 params.putInt("destilado", estabelecimento.get(position).destilado);
                 params.putInt("comida", estabelecimento.get(position).comida);
-
-               // params.putString("img", estabelecimento.get(position).imgBar);
+                params.putString("imagem", estabelecimento.get(position).imgBar);
                 it.putExtras(params);
                startActivity(it);
             }
@@ -76,7 +75,7 @@ public class lista extends Activity {
                 a.destilado = cursor.getInt(cursor.getColumnIndex(db.KEY_DEST));
                 a.comida = cursor.getInt(cursor.getColumnIndex(db.KEY_COMIDA));
                 a.preco = cursor.getString(cursor.getColumnIndex(db.KEY_PRECO));
-               // a.imgBar = cursor.getString(cursor.getColumnIndex(db.KEY_IMG));
+                a.imgBar = cursor.getString(cursor.getColumnIndex(db.KEY_IMG));
                 estabelecimento.add(a);
             } while (cursor.moveToNext());
 

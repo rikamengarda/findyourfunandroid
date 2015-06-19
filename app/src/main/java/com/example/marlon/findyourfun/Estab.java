@@ -14,6 +14,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Estab extends Activity {
     private ImageView imgDest;
@@ -25,15 +28,24 @@ public class Estab extends Activity {
     private TextView txtTel;
     private TextView txtPrecoBar;
     private TextView txtHora;
+    private ImageView imgEst;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estab);
+
+
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("i01", R.drawable.i01);
+        map.put("i02", R.drawable.i02);
+
+
         Intent it = getIntent();
         Bundle params = it.getExtras();
         int destilado = params.getInt("destilado");
         int comida = params.getInt("comida");
+        String posMap = params.getString("imagem");
 
         txtNome = (TextView) findViewById(R.id.txtNomeEst);
         txtEnd = (TextView) findViewById(R.id.txtEndEst);
@@ -44,6 +56,7 @@ public class Estab extends Activity {
         txtHora = (TextView) findViewById(R.id.txtHoraEst);
         imgDest = (ImageView) findViewById(R.id.imgDestiladoEst);
         imgCom = (ImageView) findViewById(R.id.imgComidaEst);
+        imgEst = (ImageView) findViewById(R.id.imgEst);
 
         txtNome.setText(params.getString("nome"));
         txtEnd.setText(params.getString("endereco"));
@@ -52,6 +65,7 @@ public class Estab extends Activity {
         txtHora.setText(params.getString("hora"));
         txtTel.setText(String.valueOf("Telefone: " + params.getString("telefone")));
         txtPrecoBar.setText(String.valueOf("R$: " +params.getString("preco")));
+        imgEst.setImageResource(map.get(posMap));
 
         if(destilado == 1){
             imgDest.setVisibility(View.VISIBLE);
