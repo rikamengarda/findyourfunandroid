@@ -6,9 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Marlon on 11/06/2015.
@@ -16,7 +19,8 @@ import java.util.List;
 public class EstabelecimentoAdapter extends BaseAdapter {
     private List<Est> estabelecimento;
     private LayoutInflater inflater;
-
+    private Context context;
+    ImageView image;
     public EstabelecimentoAdapter (Context context, List<Est> estabelecimento){
         this.inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.estabelecimento = estabelecimento;
@@ -40,10 +44,10 @@ public class EstabelecimentoAdapter extends BaseAdapter {
     }
 
     public View getView(final int position, View arg1, ViewGroup arg2){
+
         View v = inflater.inflate(R.layout.activity_item_lista, null);
-        ((TextView)(v.findViewById(R.id.nomeBarLista))).setText(estabelecimento.get(position).nome);
-        ((TextView)(v.findViewById(R.id.horaLista))).setText(estabelecimento.get(position).horario);
-        ((TextView)(v.findViewById(R.id.txtPreco))).setText(estabelecimento.get(position).preco);
+        ((TextView)(v.findViewById(R.id.txtNomeBarList))).setText(estabelecimento.get(position).nome);
+        ((TextView)(v.findViewById(R.id.txtPrecoLista))).setText(String.valueOf("R$ " + estabelecimento.get(position).preco));
         return v;
     }
 

@@ -23,6 +23,7 @@ public class MeuOpenHelper extends SQLiteOpenHelper {
     static String KEY_DEST = "dest";
     static String KEY_COMIDA = "comida";
     static String KEY_PRECO = "preco";
+    static String KEY_IMG = "img";
 
 
     String NOME_BANCO = "db_FindYourFun";
@@ -44,7 +45,8 @@ public class MeuOpenHelper extends SQLiteOpenHelper {
             + KEY_CERVA + " integer, "
             + KEY_DEST + " integer, "
             + KEY_COMIDA + " integer, "
-            + KEY_PRECO + " text);";
+            + KEY_PRECO + " text, "
+            + KEY_IMG + " text);";
 
     MeuOpenHelper (Context context){
         super(context, "db_FindYourFun", null, 1);

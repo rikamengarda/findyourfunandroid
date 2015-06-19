@@ -2,77 +2,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cerveja">
+    android:background="@null">
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Nome Bar"
-           android:textStyle="bold"
-           android:textSize="20dp"
-           android:textColor="@color/preto"
-           android:id="@+id/nomeBarLista"
-           android:layout_marginLeft="15dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Distancia"
-        android:textStyle="bold"
-        android:textSize="15dp"
-        android:textColor="@color/preto"
-        android:layout_below="@+id/nomeBarLista"
-        android:id="@+id/distLista"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Horario"
-        android:textStyle="bold"
-        android:textSize="15dp"
-        android:textColor="@color/preto"
-        android:layout_below="@+id/distLista"
-        android:id="@+id/horaLista"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="5dp"/>
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/imgCervLista"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/imgList"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/preto"
+        android:textSize="25dp"
+        android:text="Nome do Bar"
+        android:id="@+id/txtNomeBarList"
+        android:layout_toRightOf="@+id/imgList"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+         />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@+id/imgList"
+        android:layout_below="@+id/txtNomeBarList"
+        android:layout_marginLeft="35dp"
+        android:id="@+id/imgCervejaList"
         android:src="@drawable/beer"
-        android:layout_above="@+id/horaLista"
-        android:layout_toLeftOf="@+id/txtRs"
-        android:layout_toStartOf="@+id/txtRs" />
+        android:layout_gravity="center"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="R$"
         android:textStyle="bold"
-        android:textSize="15dp"
         android:textColor="@color/preto"
-        android:id="@+id/txtRs"
-        android:layout_marginLeft="10dp"
-        android:layout_alignBottom="@+id/nomeBarLista"
-        android:layout_toLeftOf="@+id/txtPreco"
-        android:layout_toStartOf="@+id/txtPreco" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PReço"
-        android:textStyle="bold"
         android:textSize="15dp"
-        android:textColor="@color/preto"
-        android:id="@+id/txtPreco"
+        android:text="Preço"
+        android:id="@+id/txtPrecoLista"
+        android:layout_toRightOf="@+id/imgCervejaList"
+        android:layout_below="@+id/txtNomeBarList"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="33dp"
-        android:layout_marginEnd="33dp"
-        android:layout_alignTop="@+id/txtRs"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        />
 
 </RelativeLayout>

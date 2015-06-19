@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,7 +21,6 @@ public class lista extends Activity {
     private List<Est> estabelecimento = new ArrayList<Est>();
     private EstabelecimentoAdapter estAdapter;
     public ListView list;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +28,12 @@ public class lista extends Activity {
 
         list = (ListView) findViewById(R.id.list);
         db = new BancoDeDados(this);
-
         lerDados();
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Intent it = new Intent(getApplicationContext(), estabelecimento.class);
+                Intent it = new Intent(getApplicationContext(), Estab.class);
                 Bundle params = new Bundle();
                 params.putString("nome", estabelecimento.get(position).nome);
                 params.putString("endereco", estabelecimento.get(position).endereco);
@@ -42,9 +41,11 @@ public class lista extends Activity {
                 params.putString("descricao", estabelecimento.get(position).descricao);
                 params.putString("telefone", estabelecimento.get(position).telefone);
                 params.putString("preco", estabelecimento.get(position).preco);
-                params.putInt("cerveja", estabelecimento.get(position).cerveja);
+                params.putString("hora", estabelecimento.get(position).horario);
                 params.putInt("destilado", estabelecimento.get(position).destilado);
                 params.putInt("comida", estabelecimento.get(position).comida);
+
+               // params.putString("img", estabelecimento.get(position).imgBar);
                 it.putExtras(params);
                startActivity(it);
             }
@@ -75,6 +76,7 @@ public class lista extends Activity {
                 a.destilado = cursor.getInt(cursor.getColumnIndex(db.KEY_DEST));
                 a.comida = cursor.getInt(cursor.getColumnIndex(db.KEY_COMIDA));
                 a.preco = cursor.getString(cursor.getColumnIndex(db.KEY_PRECO));
+               // a.imgBar = cursor.getString(cursor.getColumnIndex(db.KEY_IMG));
                 estabelecimento.add(a);
             } while (cursor.moveToNext());
 

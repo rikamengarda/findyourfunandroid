@@ -5,7 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.marlon.findyourfun.cadastro"
-    android:background="@color/cerveja"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal">
 
@@ -267,6 +267,27 @@
                 android:id="@+id/editChoppCad"
                 android:background="@color/branco"
                 android:hint="Preço Chopp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID da imagem:"
+                android:layout_marginTop="@dimen/margem_bot"
+                android:layout_marginBottom="@dimen/margem_bot"
+                android:paddingLeft="@dimen/margem_left"
+                android:textColor="@color/preto"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/imgBar"
+                android:background="@color/branco"
+                android:hint="ID da imagem"
                 android:layout_gravity="center_horizontal"
                 />
 

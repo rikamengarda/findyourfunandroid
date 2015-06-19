@@ -24,6 +24,7 @@ public class BancoDeDados {
     static String KEY_DEST = "dest";
     static String KEY_COMIDA = "comida";
     static String KEY_PRECO = "preco";
+    static String KEY_IMG = "img";
 
     String NOME_TABELA = "estabelecimento";
 
@@ -46,7 +47,7 @@ public class BancoDeDados {
     }
 
     public long insereEst(String est, String endereco, String descricao, String telefone, String horario, String site,
-                          String fb, String inst, String tw, int cerveja, int destilado, int comida, String preco){
+                          String fb, String inst, String tw, int cerveja, int destilado, int comida, String preco, String img){
         ContentValues campos = new ContentValues();
         campos.put(KEY_EST, est);
         campos.put(KEY_END, endereco);
@@ -61,6 +62,7 @@ public class BancoDeDados {
         campos.put(KEY_DEST, destilado);
         campos.put(KEY_COMIDA, comida);
         campos.put(KEY_PRECO, preco);
+        campos.put(KEY_IMG, img);
         return db.insert(NOME_TABELA, null, campos);
     }
 
@@ -70,11 +72,11 @@ public class BancoDeDados {
 
     public Cursor retornaTodosEst(){
         return db.query(NOME_TABELA, new String[]{KEY_ID, KEY_EST, KEY_MEDIA, KEY_END, KEY_DESC, KEY_TEL, KEY_HORARIO, KEY_SITE
-                , KEY_FB, KEY_INST, KEY_TT, KEY_CERVA, KEY_DEST, KEY_COMIDA, KEY_PRECO}, null, null, null, null, null);
+                , KEY_FB, KEY_INST, KEY_TT, KEY_CERVA, KEY_DEST, KEY_COMIDA, KEY_PRECO, KEY_IMG}, null, null, null, null, null);
     }
 
     public boolean atualizaEst(long id, String est, String media, String endereco, String descricao, String telefone, String horario, String site,
-                               String fb, String inst, String tw, int cerveja, int destilado, int comida, String preco){
+                               String fb, String inst, String tw, int cerveja, int destilado, int comida, String preco, String img){
         ContentValues args = new ContentValues();
         args.put(KEY_EST, est);
         args.put(KEY_MEDIA, media);
@@ -90,6 +92,8 @@ public class BancoDeDados {
         args.put(KEY_DEST, destilado);
         args.put(KEY_COMIDA, comida);
         args.put(KEY_PRECO, preco);
+        args.put(KEY_IMG, img);
+
         // Retorna se houve registro alterado ou nao
         return db.update(NOME_TABELA, args, KEY_ID + "=" + id, null) > 0;
     }

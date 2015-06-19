@@ -26,6 +26,7 @@ public class cadastro extends Activity {
     private int dest;
     private int comida;
     private EditText precEdt;
+    private EditText img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class cadastro extends Activity {
         cervCk = (CheckBox) findViewById(R.id.checkCervejaCad);
         destCk = (CheckBox) findViewById(R.id.checkDestiladosCad);
         comidaCK = (CheckBox) findViewById(R.id.checkComidaCad);
+        img = (EditText)findViewById(R.id.imgBar);
 
         btCadastrar.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -85,7 +87,7 @@ public class cadastro extends Activity {
         db.abrir();
             db.insereEst(nomeEdt.getText().toString(), endEdt.getText().toString(), descEdt.getText().toString(), telEdt.getText().toString(),
                     horEdt.getText().toString(), siteEdt.getText().toString(), faceEdt.getText().toString(), instEdt.getText().toString(), twtEdt.getText().toString(),
-                    cerveja, dest, comida, precEdt.getText().toString());
+                    cerveja, dest, comida, precEdt.getText().toString(), img.getText().toString());
         db.fechar();
         finish();
     }
