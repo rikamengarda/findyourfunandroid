@@ -10,6 +10,10 @@
     <color name="background_Login">#d9d5dc</color>
     <color name="branco">#fff</color>
     <color name="preto">#000</color>
+    <color name="marrom">#630</color>
+    <color name="cinza">#999</color>
+
+
     <string name="title_activity_cadastro">Cadastro</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_estabelecimento">Estabelecimento</string>

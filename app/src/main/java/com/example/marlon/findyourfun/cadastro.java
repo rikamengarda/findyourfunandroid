@@ -1,12 +1,14 @@
 package com.example.marlon.findyourfun;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class cadastro extends Activity {
@@ -34,6 +36,7 @@ public class cadastro extends Activity {
         setContentView(R.layout.activity_cadastro);
 
         Button btCadastrar = (Button) findViewById(R.id.btnCadastroCad);
+        Button btConfig = (Button) findViewById(R.id.btnConfigCad);
         Button btEditar = (Button) findViewById(R.id.btnEditarCad);
         nomeEdt = (EditText) findViewById(R.id.editNomeCad);
         endEdt = (EditText) findViewById(R.id.editEndCad);
@@ -80,6 +83,12 @@ public class cadastro extends Activity {
                 startActivity(it);
             };
         });
+
+        btConfig.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+            configCad(v);
+            };
+        });
     }
 
     public void salvar (View v){
@@ -90,6 +99,19 @@ public class cadastro extends Activity {
                     cerveja, dest, comida, precEdt.getText().toString(), img.getText().toString());
         db.fechar();
         finish();
+    }
+
+    public void configCad (View v){
+        BancoConfig db = new BancoConfig(this);
+        db.abrir();
+        db.insereConfig("5", 1, 1, 1);
+        Context context = getApplicationContext();
+        CharSequence text = "Cadastrado!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+
     }
 
 }

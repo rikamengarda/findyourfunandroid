@@ -75,27 +75,4 @@ public class BancoDeDados {
                 , KEY_FB, KEY_INST, KEY_TT, KEY_CERVA, KEY_DEST, KEY_COMIDA, KEY_PRECO, KEY_IMG}, null, null, null, null, null);
     }
 
-    public boolean atualizaEst(long id, String est, String media, String endereco, String descricao, String telefone, String horario, String site,
-                               String fb, String inst, String tw, int cerveja, int destilado, int comida, String preco, String img){
-        ContentValues args = new ContentValues();
-        args.put(KEY_EST, est);
-        args.put(KEY_MEDIA, media);
-        args.put(KEY_END, endereco);
-        args.put(KEY_DESC, descricao);
-        args.put(KEY_TEL, telefone);
-        args.put(KEY_HORARIO, horario);
-        args.put(KEY_SITE, site);
-        args.put(KEY_FB, fb);
-        args.put(KEY_INST, inst);
-        args.put(KEY_TT, tw);
-        args.put(KEY_CERVA, cerveja);
-        args.put(KEY_DEST, destilado);
-        args.put(KEY_COMIDA, comida);
-        args.put(KEY_PRECO, preco);
-        args.put(KEY_IMG, img);
-
-        // Retorna se houve registro alterado ou nao
-        return db.update(NOME_TABELA, args, KEY_ID + "=" + id, null) > 0;
-    }
-
 }

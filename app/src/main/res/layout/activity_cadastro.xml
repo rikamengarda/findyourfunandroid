@@ -5,7 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.marlon.findyourfun.cadastro"
-    android:background="@drawable/background"
+    android:background="@drawable/back3"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal">
 
@@ -316,6 +316,19 @@
                     android:layout_height="wrap_content"
                     android:text="Editar"
                     android:id="@+id/btnEditarCad"
+                    android:background="@color/preto"
+                    android:textColor="@color/branco"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="@dimen/margem_top"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Config"
+                    android:id="@+id/btnConfigCad"
                     android:background="@color/preto"
                     android:textColor="@color/branco"
                     android:textStyle="bold"

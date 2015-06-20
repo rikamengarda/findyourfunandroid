@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,6 +46,14 @@ public class EstabelecimentoAdapter extends BaseAdapter {
         Map<String, Integer> map = new HashMap<String, Integer>();
         map.put("i01", R.drawable.i01);
         map.put("i02", R.drawable.i02);
+        map.put("i03", R.drawable.i03);
+        map.put("i04", R.drawable.i04);
+        map.put("i05", R.drawable.i05);
+        map.put("i06", R.drawable.i06);
+        map.put("i07", R.drawable.i07);
+        map.put("i08", R.drawable.i08);
+        map.put("i09", R.drawable.i09);
+        map.put("i10", R.drawable.i10);
 
         View v = inflater.inflate(R.layout.activity_item_lista, null);
         ((TextView)(v.findViewById(R.id.txtNomeBarList))).setText(estabelecimento.get(position).nome);

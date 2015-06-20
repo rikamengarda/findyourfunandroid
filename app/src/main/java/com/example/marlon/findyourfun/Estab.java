@@ -2,17 +2,12 @@ package com.example.marlon.findyourfun;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +34,14 @@ public class Estab extends Activity {
         Map<String, Integer> map = new HashMap<String, Integer>();
         map.put("i01", R.drawable.i01);
         map.put("i02", R.drawable.i02);
+        map.put("i03", R.drawable.i03);
+        map.put("i04", R.drawable.i04);
+        map.put("i05", R.drawable.i05);
+        map.put("i06", R.drawable.i06);
+        map.put("i07", R.drawable.i07);
+        map.put("i08", R.drawable.i08);
+        map.put("i09", R.drawable.i09);
+        map.put("i10", R.drawable.i10);
 
 
         Intent it = getIntent();

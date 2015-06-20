@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:gravity="center_horizontal"
     tools:context="com.example.marlon.findyourfun.config"
-    android:background="@drawable/background"
+    android:background="@drawable/back3"
     android:orientation="vertical">
 
     <TextView
@@ -15,7 +15,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Configurações"
         android:id="@+id/txtLabel"
-        android:textColor="@color/preto"
+        android:textColor="@color/marrom"
         android:textStyle="bold"
         android:textSize="@dimen/text_Labels"
         android:layout_marginTop="20dp"
@@ -31,7 +31,7 @@
         android:id="@+id/txtAlcance"
         android:text="Alcance"
         android:textStyle="bold"
-        android:textColor="@color/preto"
+        android:textColor="@color/marrom"
         android:textSize="@dimen/text_Corpo"
         android:layout_gravity="left"
         />
@@ -55,7 +55,7 @@
                 android:id="@+id/txtValorKM"
                 android:text="5"
                 android:textStyle="bold"
-                android:textColor="@color/preto"
+                android:textColor="@color/marrom"
                 android:textSize="15dp"
                 android:layout_gravity="right"
                 android:layout_column="2" />
@@ -66,7 +66,7 @@
                     android:id="@+id/txtKm"
                     android:text="Km"
                     android:textStyle="bold"
-                    android:textColor="@color/preto"
+                    android:textColor="@color/marrom"
                     android:textSize="15dp"
                     android:paddingLeft="5dp"
                     android:layout_gravity="right"
@@ -82,7 +82,7 @@
         android:id="@+id/txtPref"
         android:text="Preferências"
         android:textStyle="bold"
-        android:textColor="@color/preto"
+        android:textColor="@color/marrom"
         android:textSize="@dimen/text_Corpo"
         android:layout_gravity="left"
         />
@@ -96,7 +96,7 @@
         android:layout_gravity="left"
         android:checked="true"
         android:textStyle="bold"
-        android:textColor="@color/preto"
+        android:textColor="@color/marrom"
         />
 
     <CheckBox
@@ -107,7 +107,7 @@
         android:layout_marginLeft="30dp"
         android:layout_gravity="left"
         android:textStyle="bold"
-        android:textColor="@color/preto"/>
+        android:textColor="@color/marrom"/>
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
         android:layout_marginLeft="30dp"
         android:layout_gravity="left"
         android:textStyle="bold"
-        android:textColor="@color/preto"/>
+        android:textColor="@color/marrom"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -125,7 +125,7 @@
         android:text="Salvar"
         android:id="@+id/btnSalvarConf"
         android:layout_marginTop="40dp"
-        android:background="@color/preto"
+        android:background="@color/marrom"
         android:textColor="@color/branco"
         android:layout_gravity="center_horizontal" />
 

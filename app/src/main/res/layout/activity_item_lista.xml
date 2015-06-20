@@ -1,8 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@null">
+    android:layout_height="match_parent">
 
 
     <ImageView
@@ -17,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textColor="@color/preto"
+        android:textColor="@color/marrom"
         android:textSize="25dp"
         android:text="Nome do Bar"
         android:id="@+id/txtNomeBarList"
@@ -41,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textColor="@color/preto"
+        android:textColor="@color/marrom"
         android:textSize="15dp"
         android:text="Preço"
         android:id="@+id/txtPrecoLista"

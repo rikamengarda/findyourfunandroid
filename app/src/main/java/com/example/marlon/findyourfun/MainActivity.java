@@ -17,11 +17,16 @@ public class MainActivity extends TabActivity {
 
         mTabHost = getTabHost();
 
-        mTabHost.addTab(mTabHost.newTabSpec("1").setIndicator("", getResources().getDrawable(R.drawable.star)).setContent(new Intent(this, lista.class)));
-      //mTabHost.addTab(mTabHost.newTabSpec("2").setIndicator("", getResources().getDrawable(R.drawable.magnifier)).setContent(new Intent(this, config.class)));
-        //mTabHost.addTab(mTabHost.newTabSpec("3").setIndicator("", getResources().getDrawable(R.drawable.pin)).setContent(new Intent(this, estabelecimento.class )));
-        mTabHost.addTab(mTabHost.newTabSpec("4").setIndicator("", getResources().getDrawable(R.drawable.gear)).setContent(new Intent(this, config.class)));
-        mTabHost.setCurrentTab(0);
+       mTabHost.addTab(mTabHost.newTabSpec("1").setIndicator("", getResources().getDrawable(R.drawable.list)).setContent(new Intent(this, lista.class)));
+       mTabHost.addTab(mTabHost.newTabSpec("2").setIndicator("", getResources().getDrawable(R.drawable.pin)).setContent(new Intent(this, config.class)));
+       mTabHost.addTab(mTabHost.newTabSpec("3").setIndicator("", getResources().getDrawable(R.drawable.gear)).setContent(new Intent(this, config.class)));
+       mTabHost.setCurrentTab(0);
+
+       mTabHost.getTabWidget().getChildAt(0).getLayoutParams().height =100;
+       mTabHost.getTabWidget().getChildAt(1).getLayoutParams().height =100;
+       mTabHost.getTabWidget().getChildAt(2).getLayoutParams().height =100;
+
+
     }
 
 

@@ -14,18 +14,10 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         db = new BancoDeDados(this);
-        Button btLogin = (Button)findViewById(R.id.btnLogin);
         Button btFacebook = (Button)findViewById(R.id.btn_Login_facebook);
         Button btCadastro = (Button)findViewById(R.id.btnCadastrar);
 
         btFacebook.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                Intent it = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(it);
-            };
-        });
-
-        btLogin.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 Intent it = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(it);

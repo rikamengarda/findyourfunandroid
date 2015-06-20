@@ -25,11 +25,6 @@ public class MeuOpenHelper extends SQLiteOpenHelper {
     static String KEY_PRECO = "preco";
     static String KEY_IMG = "img";
 
-
-    String NOME_BANCO = "db_FindYourFun";
-    String NOME_TABELA = "estabelecimento";
-    int VERSAO_BANCO = 1;
-
     String SQL_CREATE_TABLE = "create table estabelecimento" +
             "(" + KEY_ID + " integer primary key autoincrement, "
             + KEY_EST + " text, "
@@ -49,7 +44,7 @@ public class MeuOpenHelper extends SQLiteOpenHelper {
             + KEY_IMG + " text);";
 
     MeuOpenHelper (Context context){
-        super(context, "db_FindYourFun", null, 1);
+        super(context, "db_FindYourFun2", null, 1);
     }
 
     @Override
