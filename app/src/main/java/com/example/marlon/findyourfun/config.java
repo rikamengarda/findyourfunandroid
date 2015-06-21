@@ -23,6 +23,9 @@ public class config extends Activity {
     private int cerv;
     private int destila;
     private int com;
+    private boolean destilad;
+    private boolean comid;
+
     BancoConfig db = new BancoConfig(this);
     private List<Configuracoes> configs = new ArrayList<Configuracoes>();
 
@@ -30,6 +33,20 @@ public class config extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
+
+        lerDados();
+
+        if (configs.get(0).destilado == 0) {
+            destilad = false;
+        } else {
+            destilad = true;
+        }
+
+        if (configs.get(0).comida == 0) {
+            comid = false;
+        } else {
+            comid = true;
+        }
 
         SeekBar skRange =(SeekBar)findViewById(R.id.skbAlcance);
         skRange.setOnSeekBarChangeListener(skRangeListener);
@@ -39,9 +56,9 @@ public class config extends Activity {
         destilaCk = (CheckBox) findViewById(R.id.checkDestilados);
         comCK = (CheckBox) findViewById(R.id.checkComida);
 
-        lerDados();
-
-        skRange.setProgress(Integer.parseInt(configs.get(0).alc));
+        skRange.setProgress(configs.get(0).alc);
+        destilaCk.setChecked(destilad);
+        comCK.setChecked(comid);
         kms = skRange.getProgress();
 
         Button btSalvar = (Button) findViewById(R.id.btnSalvarConf);
@@ -64,7 +81,9 @@ public class config extends Activity {
                 } else {
                     com = 0;
                 }
-                salvar(configs);
+
+
+                salvar(kms, cerv, destila, com);
             }
 
             ;
@@ -102,7 +121,7 @@ public class config extends Activity {
             do {
                 Configuracoes a = new Configuracoes();
                 a.id = cursor.getInt(cursor.getColumnIndex(db.KEY_ID));
-                a.alc = cursor.getString(cursor.getColumnIndex(db.KEY_ALC));
+                a.alc = cursor.getInt(cursor.getColumnIndex(db.KEY_ALC));
                 a.cerveja = cursor.getInt(cursor.getColumnIndex(db.KEY_CERVA));
                 a.destilado = cursor.getInt(cursor.getColumnIndex(db.KEY_DEST));
                 a.comida = cursor.getInt(cursor.getColumnIndex(db.KEY_COMIDA));
@@ -111,9 +130,9 @@ public class config extends Activity {
         db.fechar();
     }
 
-    public void salvar (List<Configuracoes> list){
+    public void salvar (int alcance, int cerve, int desti, int comi){
         db.abrir();
-        db.atualizaConfig(list.get(0).id, list.get(0).alc, list.get(0).cerveja, list.get(0).destilado, list.get(0).comida);
+        db.atualizaConfig(1, alcance, cerve, desti, comi);
         db.fechar();
     }
 

@@ -16,7 +16,7 @@ public class ConfigOpenHelper extends SQLiteOpenHelper {
 
     String SQL_CREATE_TABLE = "create table configuracao" +
             "(" + KEY_ID + " integer primary key autoincrement, "
-            + KEY_ALC + " text, "
+            + KEY_ALC + " integer, "
             + KEY_CERVA + " integer, "
             + KEY_DEST + " integer, "
             + KEY_COMIDA + " integer);";

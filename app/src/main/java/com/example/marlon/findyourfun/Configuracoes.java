@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Configuracoes implements Serializable {
     int id;
-    String alc;
+    int alc;
     int cerveja;
     int destilado;
     int comida;

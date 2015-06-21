@@ -22,5 +22,5 @@ public class Est implements Serializable {
     int comida;
     String preco;
     String imgBar;
-
+    float dist;
 }

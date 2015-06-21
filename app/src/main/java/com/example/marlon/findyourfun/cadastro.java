@@ -104,7 +104,7 @@ public class cadastro extends Activity {
     public void configCad (View v){
         BancoConfig db = new BancoConfig(this);
         db.abrir();
-        db.insereConfig("5", 1, 1, 1);
+        db.insereConfig(5, 1, 1, 1);
         Context context = getApplicationContext();
         CharSequence text = "Cadastrado!";
         int duration = Toast.LENGTH_SHORT;

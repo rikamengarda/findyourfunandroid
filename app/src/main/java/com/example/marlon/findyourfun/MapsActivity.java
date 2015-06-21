@@ -92,7 +92,7 @@ public class MapsActivity extends FragmentActivity {
 
         // Get Current Location
         Location myLocation = locationManager.getLastKnownLocation(provider);
-        Location dest = new Location(provider);
+        //Location dest = new Location(provider);
 
         Geocoder coder = new Geocoder(this);
         try {

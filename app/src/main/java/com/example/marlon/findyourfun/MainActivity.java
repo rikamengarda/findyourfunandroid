@@ -15,7 +15,7 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
-        mTabHost = getTabHost();
+       mTabHost = getTabHost();
 
        mTabHost.addTab(mTabHost.newTabSpec("1").setIndicator("", getResources().getDrawable(R.drawable.list)).setContent(new Intent(this, lista.class)));
        mTabHost.addTab(mTabHost.newTabSpec("2").setIndicator("", getResources().getDrawable(R.drawable.pin)).setContent(new Intent(this, config.class)));

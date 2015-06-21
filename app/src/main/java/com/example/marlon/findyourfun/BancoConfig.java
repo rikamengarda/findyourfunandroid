@@ -34,7 +34,7 @@ public class BancoConfig {
         openHelper.close();
     }
 
-    public long insereConfig(String alc, int cerveja, int destilado, int comida){
+    public long insereConfig(int alc, int cerveja, int destilado, int comida){
         ContentValues campos = new ContentValues();
         campos.put(KEY_ALC, alc);
         campos.put(KEY_CERVA, cerveja);
@@ -47,7 +47,7 @@ public class BancoConfig {
         return db.query(NOME_TABELA, new String[]{KEY_ID, KEY_ALC, KEY_CERVA, KEY_DEST, KEY_COMIDA}, null, null, null, null, null);
     }
 
-    public boolean atualizaConfig(long id, String alc, int cerveja, int destilado, int comida){
+    public boolean atualizaConfig(long id, int alc, int cerveja, int destilado, int comida){
         ContentValues args = new ContentValues();
         args.put(KEY_ALC, alc);
         args.put(KEY_CERVA, cerveja);

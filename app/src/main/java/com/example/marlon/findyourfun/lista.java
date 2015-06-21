@@ -1,13 +1,20 @@
 package com.example.marlon.findyourfun;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +24,11 @@ import java.util.List;
 public class lista extends Activity {
 
     private BancoDeDados db;
+    private BancoConfig dbC;
+
     private List<Est> estabelecimento = new ArrayList<Est>();
+    private List<Configuracoes> configs = new ArrayList<Configuracoes>();
+
     private EstabelecimentoAdapter estAdapter;
     public ListView list;
     @Override
@@ -27,6 +38,8 @@ public class lista extends Activity {
 
         list = (ListView) findViewById(R.id.list);
         db = new BancoDeDados(this);
+        dbC = new BancoConfig(this);
+
         lerDados();
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
@@ -51,11 +64,25 @@ public class lista extends Activity {
         });
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        lerDados();
+    }
+
     public void lerDados() {
         db.abrir();
-        estabelecimento.clear();
-        Cursor cursor = db.retornaTodosEst();
+        dbC.abrir();
 
+        estabelecimento.clear();
+        configs.clear();
+
+        Cursor cursor = db.retornaTodosEst();
+        Cursor cursorC = dbC.retornaTodosConfig();
+
+        Configuracoes c = new Configuracoes();
+        cursorC.moveToFirst();
+        c.alc = cursorC.getInt(cursorC.getColumnIndex(dbC.KEY_ALC));
         if (cursor.moveToFirst())
             do {
                 Est a = new Est();
@@ -75,7 +102,10 @@ public class lista extends Activity {
                 a.comida = cursor.getInt(cursor.getColumnIndex(db.KEY_COMIDA));
                 a.preco = cursor.getString(cursor.getColumnIndex(db.KEY_PRECO));
                 a.imgBar = cursor.getString(cursor.getColumnIndex(db.KEY_IMG));
-                estabelecimento.add(a);
+
+               if (verifica_distancia(c.alc, a.endereco)){
+                   estabelecimento.add(a);
+               }
             } while (cursor.moveToNext());
 
         if(estabelecimento.size() > 0){
@@ -89,8 +119,42 @@ public class lista extends Activity {
         db.fechar();
     }
 
-    private boolean verifica_distancia(int dist){
+    private boolean verifica_distancia(int dist, String end){
+        float [] distancia = new float [2];
+        float calc;
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-        return true;
+        // Create a criteria object to retrieve provider
+        Criteria criteria = new Criteria();
+
+        // Get the name of the best provider
+        String provider = locationManager.getBestProvider(criteria, true);
+
+
+        // Get Current Location
+        Location myLocation = locationManager.getLastKnownLocation(provider);
+        double latitude = myLocation.getLatitude();
+        double longitude = myLocation.getLongitude();
+
+        try {
+            Geocoder coder = new Geocoder(this);
+            ArrayList<Address> adresses = (ArrayList<Address>) coder.getFromLocationName(end, 1);
+            for(Address add : adresses) {
+                double destlongitude = add.getLongitude();
+                double destlatitude = add.getLatitude();
+                myLocation.distanceBetween(latitude, longitude, destlatitude,destlongitude , distancia);
+            }
+        } catch (IOException e) {
+              e.printStackTrace();
+          }
+
+        calc = distancia[0]/1000;
+
+        if(dist >= (int)calc){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 }
