@@ -97,7 +97,8 @@
         android:checked="true"
         android:textStyle="bold"
         android:textColor="@color/marrom"
-        />
+        android:clickable="false"
+        android:enabled="true" />
 
     <CheckBox
         android:layout_width="wrap_content"

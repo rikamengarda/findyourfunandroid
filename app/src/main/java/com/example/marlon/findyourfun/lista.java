@@ -83,6 +83,8 @@ public class lista extends Activity {
         Configuracoes c = new Configuracoes();
         cursorC.moveToFirst();
         c.alc = cursorC.getInt(cursorC.getColumnIndex(dbC.KEY_ALC));
+        c.comida = cursorC.getInt(cursorC.getColumnIndex(dbC.KEY_COMIDA));
+        c.destilado = cursorC.getInt(cursorC.getColumnIndex(dbC.KEY_DEST));
         if (cursor.moveToFirst())
             do {
                 Est a = new Est();
@@ -104,7 +106,9 @@ public class lista extends Activity {
                 a.imgBar = cursor.getString(cursor.getColumnIndex(db.KEY_IMG));
 
                if (verifica_distancia(c.alc, a.endereco)){
-                   estabelecimento.add(a);
+                   if(verifica_tipo(a.comida, a.destilado, c.comida, c.destilado)){
+                       estabelecimento.add(a);
+                   }
                }
             } while (cursor.moveToNext());
 
@@ -156,5 +160,23 @@ public class lista extends Activity {
             return false;
         }
 
+    }
+
+    private boolean verifica_tipo(int comida, int dest, int prefComida, int prefDest){
+        if(prefComida == 1 && prefDest == 1){
+            if(comida == prefComida) {
+                if (dest == prefDest) {
+                    return true;
+                }
+            }
+        }else{
+            if(comida == prefComida) {
+                return true;
+            }
+            if(dest == prefDest){
+                return true;
+            }
+        }
+        return false;
     }
 }
