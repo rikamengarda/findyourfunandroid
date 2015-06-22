@@ -58,6 +58,7 @@ public class lista extends Activity {
                 params.putInt("destilado", estabelecimento.get(position).destilado);
                 params.putInt("comida", estabelecimento.get(position).comida);
                 params.putString("imagem", estabelecimento.get(position).imgBar);
+                params.putInt("dist", estabelecimento.get(position).dist);
                 it.putExtras(params);
                startActivity(it);
             }
@@ -107,11 +108,14 @@ public class lista extends Activity {
                 a.preco = cursor.getString(cursor.getColumnIndex(db.KEY_PRECO));
                 a.imgBar = cursor.getString(cursor.getColumnIndex(db.KEY_IMG));
 
-               if (verifica_distancia(c.alc, a.endereco)){
-                   if(verifica_tipo(a.comida, a.destilado, c.comida, c.destilado)){
-                       estabelecimento.add(a);
-                   }
-               }
+                a.dist = retorna_distancia(c.alc, a.endereco);
+
+                if(c.alc >= a.dist){
+                    if(verifica_tipo(a.comida, a.destilado, c.comida, c.destilado)){
+                        estabelecimento.add(a);
+                    }
+                }
+
             } while (cursor.moveToNext());
 
         if(estabelecimento.size() > 0){
@@ -132,6 +136,42 @@ public class lista extends Activity {
         db.fechar();
         dbC.fechar();
     }
+
+    private int retorna_distancia(int dist, String end){
+        float [] distancia = new float [2];
+        float calc;
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        // Create a criteria object to retrieve provider
+        Criteria criteria = new Criteria();
+
+        // Get the name of the best provider
+        String provider = locationManager.getBestProvider(criteria, true);
+
+
+        // Get Current Location
+        Location myLocation = locationManager.getLastKnownLocation(provider);
+        double latitude = myLocation.getLatitude();
+        double longitude = myLocation.getLongitude();
+
+        try {
+            Geocoder coder = new Geocoder(this);
+            ArrayList<Address> adresses = (ArrayList<Address>) coder.getFromLocationName(end, 1);
+            for(Address add : adresses) {
+                double destlongitude = add.getLongitude();
+                double destlatitude = add.getLatitude();
+                myLocation.distanceBetween(latitude, longitude, destlatitude,destlongitude , distancia);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        calc = distancia[0]/1000;
+
+        return (int)calc;
+
+    }
+
 
     private boolean verifica_distancia(int dist, String end){
         float [] distancia = new float [2];
@@ -165,6 +205,7 @@ public class lista extends Activity {
         calc = distancia[0]/1000;
 
         if(dist >= (int)calc){
+
             return true;
         }else{
             return false;

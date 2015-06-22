@@ -59,6 +59,7 @@ public class EstabelecimentoAdapter extends BaseAdapter {
         ((TextView)(v.findViewById(R.id.txtNomeBarList))).setText(estabelecimento.get(position).nome);
         ((TextView)(v.findViewById(R.id.txtPrecoLista))).setText(String.valueOf("R$ " + estabelecimento.get(position).preco));
         ((ImageView)(v.findViewById(R.id.imgList))).setImageResource(map.get(estabelecimento.get(position).imgBar));
+        ((TextView)(v.findViewById(R.id.txtDistLista))).setText(String.valueOf(estabelecimento.get(position).dist + "kms"));
         return v;
     }
 

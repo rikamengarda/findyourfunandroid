@@ -81,18 +81,6 @@ public class MapsActivity extends FragmentActivity {
         // Enable MyLocation Layer of Google Map
         mMap.setMyLocationEnabled(true);
 
-        // Get LocationManager object from System Service LOCATION_SERVICE
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-        // Create a criteria object to retrieve provider
-        Criteria criteria = new Criteria();
-
-        // Get the name of the best provider
-        String provider = locationManager.getBestProvider(criteria, true);
-
-        // Get Current Location
-        Location myLocation = locationManager.getLastKnownLocation(provider);
-        //Location dest = new Location(provider);
 
         Geocoder coder = new Geocoder(this);
         try {
@@ -104,12 +92,6 @@ public class MapsActivity extends FragmentActivity {
                 LatLng latLng = new LatLng(destlatitude, destlongitude);
                 // set map type
                 mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-                // Get latitude of the current location
-                double latitude = myLocation.getLatitude();
-
-                // Get longitude of the current location
-                double longitude = myLocation.getLongitude();
 
                 // Show the current location in Google Map
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));

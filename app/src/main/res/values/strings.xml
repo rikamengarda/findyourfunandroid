@@ -24,6 +24,7 @@
     <string name="title_activity_teste_mapa">TesteMapa</string>
     <string name="title_activity_current_location">CurrentLocation</string>
     <string name="title_activity_estab">Estab</string>
+    <string name="title_activity_maps_feed">Map</string>
 
 
 </resources>

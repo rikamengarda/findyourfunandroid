@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +24,7 @@ public class Estab extends Activity {
     private TextView txtPrecoBar;
     private TextView txtHora;
     private ImageView imgEst;
+    private TextView txtDist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +61,7 @@ public class Estab extends Activity {
         imgDest = (ImageView) findViewById(R.id.imgDestiladoEst);
         imgCom = (ImageView) findViewById(R.id.imgComidaEst);
         imgEst = (ImageView) findViewById(R.id.imgEst);
+        txtDist = (TextView) findViewById(R.id.txtdistEst);
 
         txtNome.setText(params.getString("nome"));
         txtEnd.setText(params.getString("endereco"));
@@ -70,6 +71,7 @@ public class Estab extends Activity {
         txtTel.setText(String.valueOf("Telefone: " + params.getString("telefone")));
         txtPrecoBar.setText(String.valueOf("R$: " +params.getString("preco")));
         imgEst.setImageResource(map.get(posMap));
+        txtDist.setText(String.valueOf(params.getInt("dist") + "kms"));
 
         if(destilado == 1){
             imgDest.setVisibility(View.VISIBLE);
@@ -78,8 +80,8 @@ public class Estab extends Activity {
             imgCom.setVisibility(View.VISIBLE);
         }
 
-        ImageButton btnMapa = (ImageButton) findViewById(R.id.imgMaps);
-        ImageButton btnLigar = (ImageButton) findViewById(R.id.imgTel);
+        ImageView btnMapa = (ImageView) findViewById(R.id.imgMaps);
+        ImageView btnLigar = (ImageView) findViewById(R.id.imgTel);
 
         btnMapa.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){

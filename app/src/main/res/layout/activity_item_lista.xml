@@ -50,4 +50,17 @@
         android:layout_marginLeft="5dp"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/marrom"
+        android:textSize="15dp"
+        android:id="@+id/txtDistLista"
+        android:text="Distancia"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@+id/txtPrecoLista"
+        android:layout_toRightOf="@+id/txtPrecoLista"
+        android:layout_toEndOf="@+id/txtPrecoLista" />
+
 </RelativeLayout>

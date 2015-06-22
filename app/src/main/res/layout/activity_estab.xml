@@ -102,11 +102,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/txtdistEst"
+        android:textStyle="bold"
+        android:text="Distancia"
+        android:layout_marginLeft="@dimen/margem_left"
+        android:layout_below="@+id/txtEndEst"
+        android:textColor="@color/marrom"
+        android:textSize="15dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/txtSiteEst"
         android:textStyle="bold"
         android:text="Site"
         android:layout_marginLeft="@dimen/margem_left"
-        android:layout_below="@+id/txtEndEst"
+        android:layout_below="@+id/txtdistEst"
         android:textColor="@color/marrom"
         android:textSize="15dp"
         />
@@ -136,24 +149,25 @@
         android:textSize="15dp"
         />
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imgMaps"
         android:src="@drawable/maps1"
-        android:layout_marginTop="@dimen/margem_top"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/txtDescEst"
-        android:layout_alignRight="@+id/txtHoraEst"
-        android:layout_alignEnd="@+id/txtHoraEst" />
+        android:layout_alignLeft="@+id/txtDescEst"
+        android:layout_alignStart="@+id/txtDescEst" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imgTel"
         android:src="@drawable/telefone"
+        android:layout_marginLeft="20dp"
         android:layout_alignTop="@+id/imgMaps"
         android:layout_toRightOf="@+id/imgMaps"
-        android:layout_toEndOf="@+id/imgMaps" />
+         />
 
 
 </RelativeLayout>
