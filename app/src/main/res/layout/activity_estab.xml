@@ -141,10 +141,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/imgMaps"
         android:src="@drawable/maps1"
-        android:layout_marginLeft="10dp"
-        android:layout_alignBottom="@+id/linearLayout"
-        android:layout_toRightOf="@+id/linearLayout"
-        android:layout_toEndOf="@+id/linearLayout" />
+        android:layout_marginTop="@dimen/margem_top"
+        android:layout_below="@+id/txtDescEst"
+        android:layout_alignRight="@+id/txtHoraEst"
+        android:layout_alignEnd="@+id/txtHoraEst" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgTel"
+        android:src="@drawable/telefone"
+        android:layout_alignTop="@+id/imgMaps"
+        android:layout_toRightOf="@+id/imgMaps"
+        android:layout_toEndOf="@+id/imgMaps" />
 
 
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.marlon.findyourfun;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -78,6 +79,7 @@ public class Estab extends Activity {
         }
 
         ImageButton btnMapa = (ImageButton) findViewById(R.id.imgMaps);
+        ImageButton btnLigar = (ImageButton) findViewById(R.id.imgTel);
 
         btnMapa.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
@@ -88,6 +90,18 @@ public class Estab extends Activity {
                 startActivity(it);
             };
         });
+
+        btnLigar.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                String telefone = txtTel.getText().toString();
+                telefone = telefone.substring(9);
+                Uri uri = Uri.parse("tel:" + telefone);
+                Intent intent = new Intent(Intent.ACTION_DIAL,uri);
+
+                startActivity(intent);
+
+            };
+        });;
     }
 
 }

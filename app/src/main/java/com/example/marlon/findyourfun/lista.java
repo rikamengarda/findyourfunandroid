@@ -30,7 +30,7 @@ public class lista extends Activity {
     private List<Est> estabelecimento = new ArrayList<Est>();
     private List<Configuracoes> configs = new ArrayList<Configuracoes>();
 
-    private EstabelecimentoAdapter estAdapter;
+
     public ListView list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,7 @@ public class lista extends Activity {
     public void lerDados() {
         db.abrir();
         dbC.abrir();
+        EstabelecimentoAdapter estAdapter;
 
         estabelecimento.clear();
         configs.clear();
@@ -114,12 +115,12 @@ public class lista extends Activity {
             } while (cursor.moveToNext());
 
         if(estabelecimento.size() > 0){
-            if(estAdapter == null){
+           // if(estAdapter == null){
                 estAdapter = new EstabelecimentoAdapter(this, estabelecimento);
                 list.setAdapter(estAdapter);
-            } else{
-                estAdapter.novosDados(estabelecimento);
-            }
+           // } else{
+           //     estAdapter.novosDados(estabelecimento);
+          //  }
         }else{
             Context context = getApplicationContext();
             CharSequence text = "Nenhum estabelecimento encontrado para suas preferêncais!";
@@ -179,6 +180,8 @@ public class lista extends Activity {
                 }
             }
             return false;
+        }else if(prefComida == 0 && prefDest == 0){
+            return true;
         }else{
             if(comida == prefComida) {
                 return true;
