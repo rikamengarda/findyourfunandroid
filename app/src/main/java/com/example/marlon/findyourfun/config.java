@@ -1,6 +1,7 @@
 package com.example.marlon.findyourfun;
 
 import android.app.Activity;
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,6 +136,13 @@ public class config extends Activity {
         db.abrir();
         db.atualizaConfig(1, alcance, cerve, desti, comi);
         db.fechar();
+
+        Context context = getApplicationContext();
+        CharSequence text = "Configurações Salvas!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
 }

@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class lista extends Activity {
         db = new BancoDeDados(this);
         dbC = new BancoConfig(this);
 
-        lerDados();
+        //lerDados();
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
@@ -119,8 +120,16 @@ public class lista extends Activity {
             } else{
                 estAdapter.novosDados(estabelecimento);
             }
+        }else{
+            Context context = getApplicationContext();
+            CharSequence text = "Nenhum estabelecimento encontrado para suas preferêncais!";
+            int duration = Toast.LENGTH_LONG;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
         db.fechar();
+        dbC.fechar();
     }
 
     private boolean verifica_distancia(int dist, String end){
@@ -169,6 +178,7 @@ public class lista extends Activity {
                     return true;
                 }
             }
+            return false;
         }else{
             if(comida == prefComida) {
                 return true;
