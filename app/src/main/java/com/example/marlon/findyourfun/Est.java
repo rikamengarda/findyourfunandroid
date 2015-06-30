@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class Est implements Serializable {
     int id;
     String nome;
-    double media;
     String endereco;
     String descricao;
     String telefone;
